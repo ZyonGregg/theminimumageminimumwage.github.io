@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statistics | Minimum Age</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                  url('https://i.pinimg.com/736x/50/a6/ff/50a6ff34c320c3abc0e82d7945571a31.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-height: 180px;
+    }
+
+    .stat-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white bg-opacity-10 backdrop-blur-md shadow z-50 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/No_symbol_red.svg/1024px-No_symbol_red.svg.png" alt="Logo" class="w-10 h-10">
+        <span class="text-xl font-bold text-red-500">Minimum Age</span>
+      </div>
+      <nav class="space-x-6 font-medium">
+        <a href="index.html" class="hover:text-red-400 transition duration-300">Home</a>
+        <a href="about.html" class="hover:text-red-400 transition duration-300">About</a>
+        <a href="article.html" class="hover:text-red-400 transition duration-300">Article</a>
+        <a href="voicebox.html" class="hover:text-red-400 transition duration-300">Voice Box</a>
+        <a href="statistics.html" class="hover:text-red-400 transition duration-300">Statistics</a>
+        <a href="improvements.html" class="hover:text-red-400 transition duration-300">Improvements</a>
+        <a href="issue.html" class="hover:text-red-400 transition duration-300">The Issue</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-10 px-6 text-center max-w-4xl mx-auto">
+    <h1 class="text-5xl font-extrabold mb-4 text-white drop-shadow-xl">Child Labor by the Numbers</h1>
+    <p class="text-gray-300 text-lg">Real data. Real lives. These numbers show the youth who cannot experience decent living. Numbers we aim to change.</p>
+  </section>
+
+  <!-- Statistics Cards -->
+  <section class="py-16 px-6 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-red-400" id="stat1">0</div>
+      <p class="mt-2 text-gray-200">Children in child labor (globally)</p>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-yellow-400" id="stat2">0</div>
+      <p class="mt-2 text-gray-200">Children in hazardous work</p>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-green-400" id="stat3">0</div>
+      <p class="mt-2 text-gray-200">Children deprived of school due to labor</p>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-blue-400" id="stat4">0%</div>
+      <p class="mt-2 text-gray-200">Percentage in agriculture-related labor</p>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-purple-400" id="stat5">0</div>
+      <p class="mt-2 text-gray-200">Countries with active child labor laws</p>
+    </div>
+    <div class="stat-card fade-up">
+      <div class="text-5xl font-extrabold text-pink-400" id="stat6">0</div>
+      <p class="mt-2 text-gray-200">Goal: # of children we aim to free by 2030</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white bg-opacity-10 backdrop-blur-sm border-t border-white/20 py-8 mt-12 text-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div>&copy; 2024 Minimum Age. All rights reserved.</div>
+      <div class="space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">Twitter</a>
+        <a href="#" class="hover:text-white">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate fade-up cards
+    gsap.utils.toArray('.fade-up').forEach((card, i) => {
+      gsap.to(card, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: i * 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+        }
+      });
+    });
+
+    // Stat counters
+    const counters = [
+      { id: "stat1", value: 160000000 },
+      { id: "stat2", value: 79000000 },
+      { id: "stat3", value: 60000000 },
+      { id: "stat4", value: 70 },
+      { id: "stat5", value: 135 },
+      { id: "stat6", value: 10000000 }
+    ];
+
+    counters.forEach(stat => {
+      let count = 0;
+      const el = document.getElementById(stat.id);
+      const isPercent = stat.id === "stat4";
+      const increment = Math.ceil(stat.value / 120);
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 95%',
+        once: true,
+        onEnter: () => {
+          const interval = setInterval(() => {
+            count += increment;
+            if (count >= stat.value) {
+              el.textContent = isPercent ? `${stat.value}%` : stat.value.toLocaleString();
+              clearInterval(interval);
+            } else {
+              el.textContent = isPercent ? `${count}%` : count.toLocaleString();
+            }
+          }, 25);
+        }
+      });
+    });
+
+    // Page Transition - Fade In
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    // Page Transition - Fade Out on Link Click
+    document.querySelectorAll("a[href]").forEach(link => {
+      const isSameTab = link.getAttribute("target") !== "_blank" && !link.href.includes('#');
+      link.addEventListener("click", function (e) {
+        if (!isSameTab || link.href.includes('javascript')) return;
+        e.preventDefault();
+        const href = this.href;
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Improvements | Minimum Age</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                  url('https://i.pinimg.com/736x/0b/02/8a/0b028aeeb815a82ac54b3c921ebe4a0f.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    #content-section {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+    #content-section.revealed {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      width: 4px;
+      background-color: #dc2626;
+      height: 0;
+      z-index: 0;
+    }
+    .card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .circle {
+      box-shadow: 0 0 15px rgba(220, 38, 38, 0.7);
+      animation: bounce 0.6s ease-in-out;
+    }
+    #content-section img:hover {
+      transform: scale(1.02);
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    @keyframes bounce {
+      0%   { transform: scale(0.6); opacity: 0; }
+      80%  { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white bg-opacity-10 backdrop-blur-md shadow z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
+      <div class="flex items-center space-x-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/No_symbol_red.svg/1024px-No_symbol_red.svg.png" alt="Logo" class="w-10 h-10">
+        <span class="text-xl font-bold text-red-500">Minimum Age</span>
+      </div>
+      <nav class="space-x-6 font-medium text-white">
+        <a href="index.html" class="hover:text-red-400 transition">Home</a>
+        <a href="about.html" class="hover:text-red-400 transition">About</a>
+        <a href="article.html" class="hover:text-red-400 transition">Article</a>
+        <a href="voicebox.html" class="hover:text-red-400 transition">Voice Box</a>
+        <a href="statistics.html" class="hover:text-red-400 transition">Statistics</a>
+        <a href="improvements.html" class="text-red-400 font-semibold">Improvements</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-6xl font-extrabold text-white drop-shadow-xl opacity-0" id="hero-title">Improvements and Progress</h1>
+    <p class="text-gray-200 text-xl mt-4 max-w-xl opacity-0" id="hero-subtitle">Scroll to explore how we're making a difference.</p>
+  </section>
+<!-- HEAD and STYLES are the same as before -->
+<!-- ... keep your full head section ... -->
+
+<!-- Timeline Section -->
+<section id="content-section" class="max-w-6xl mx-auto pb-24 relative px-6">
+  <div id="timeline-line" class="timeline-line"></div>
+
+  <div class="space-y-32 relative pl-14">
+
+    <div class="flex flex-col md:flex-row items-start gap-10 fade-up relative">
+      <div class="absolute -left-12 top-0 w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold circle">1</div>
+      <div class="w-full md:w-3/5 card">
+        <h3 class="text-2xl font-semibold text-red-300">2020 – ILO & UNICEF Joint Report</h3>
+        <p class="text-gray-100 mt-2">The world witnessed a significant reduction of approximately 94 million child laborers between 2000 and 2016 — a testament to global advocacy and policy reform. However, this momentum began to slow in subsequent years, with progress stalling in many regions. The 2020 ILO and UNICEF joint report emphasized the urgent need for renewed international cooperation, stronger enforcement of labor laws, and targeted interventions to protect vulnerable children from exploitation.</p>
+      </div>
+      <div class="w-full md:w-2/5">
+        <img src="https://i.pinimg.com/474x/18/f6/cc/18f6cc8a590fb410e9c863e6c2c469ce.jpg" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-start gap-10 fade-up relative">
+      <div class="absolute -left-12 top-0 w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold circle">2</div>
+      <div class="w-full md:w-3/5 card">
+        <h3 class="text-2xl font-semibold text-red-300">2021 – Global March Against Child Labour</h3>
+        <p class="text-gray-100 mt-2">In 2021, non-governmental organizations and youth-led movements from over 140 countries joined forces in one of the most widespread campaigns against child labor in recent history. Their efforts spanned continents and cultures, harnessing the power of both on-the-ground activism and digital platforms to raise global consciousness. Through awareness drives, virtual conferences, school programs, and social media outreach, they were able to engage and educate more than 10 million individuals. These initiatives not only provided critical information and resources but also inspired collective responsibility—empowering young people, families, educators, and policymakers to take meaningful action in the fight to protect children’s rights and end exploitation.</p>
+      </div>
+      <div class="w-full md:w-2/5">
+        <img src="https://i.pinimg.com/474x/f2/58/9f/f2589f325ac2aa597548de81138d5c1a.jpg" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-start gap-10 fade-up relative">
+      <div class="absolute -left-12 top-0 w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold circle">3</div>
+      <div class="w-full md:w-3/5 card">
+        <h3 class="text-2xl font-semibold text-red-300">2023 – Legislation in Action</h3>
+        <p class="text-gray-100 mt-2">In 2023, several countries across Latin America, Southeast Asia, and Europe introduced new labor laws aimed at strengthening the fight against child labor. These legislative reforms prioritized routine inspections, stricter enforcement protocols, and increased penalties for non-compliant industries. Governments worked alongside civil society and international organizations to ensure these laws were not only passed but actively implemented. By holding industries more accountable and improving transparency within supply chains, these efforts marked a critical step forward in safeguarding children’s rights and preventing exploitation in vulnerable communities.</p>
+      </div>
+      <div class="w-full md:w-2/5">
+        <img src="https://i.pinimg.com/474x/85/1e/7c/851e7cca083bb03adb6655d875e64879.jpg" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-start gap-10 fade-up relative">
+      <div class="absolute -left-12 top-0 w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold circle">4</div>
+      <div class="w-full md:w-3/5 card">
+        <h3 class="text-2xl font-semibold text-red-300">2024 – Youth Advocacy Rises</h3>
+        <p class="text-gray-100 mt-2">In 2024, youth-driven movements like Minimum Age, Minimum Age began harnessing the power of technology and storytelling to spark change on a global scale. By combining social media campaigns, interactive platforms, digital art, and personal narratives, these initiatives created compelling content that resonated deeply with younger audiences. Thousands of students across different countries became informed, engaged, and empowered to advocate for children’s rights. Through online forums, webinars, and creative collaborations, the movement not only raised awareness about the realities of child labor but also built a sense of solidarity among youth determined to make a difference in their communities and beyond.</p>
+      </div>
+      <div class="w-full md:w-2/5">
+        <img src="https://i.pinimg.com/474x/26/90/2d/26902d08bbf6697c9d47a98b76e1a6b0.jpg" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-start gap-10 fade-up relative">
+      <div class="absolute -left-12 top-0 w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold circle">5</div>
+      <div class="w-full md:w-3/5 card">
+        <h3 class="text-2xl font-semibold text-red-300">The Next Steps</h3>
+        <ul class="text-gray-100 list-disc mt-2 ml-5 space-y-2">
+          <li>Stronger enforcement of child labor laws</li>
+          <li>Universal access to primary and secondary education</li>
+          <li>Global supply chain transparency</li>
+          <li>Empowerment programs for children and families</li>
+        </ul>
+      </div>
+      <div class="w-full md:w-2/5">
+        <img src="https://i.pinimg.com/474x/be/11/bd/be11bd0641bc5c2ec6433c2a60a545aa.jpg" class="rounded-lg shadow-xl w-full">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-white bg-opacity-10 backdrop-blur-sm border-t border-white/20 py-8 mt-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
+      <div>&copy; 2024 Minimum Age. All rights reserved.</div>
+      <div class="space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">Twitter</a>
+        <a href="#" class="hover:text-white">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Animation Script -->
+  <script>
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#hero-title", {opacity: 1, y: -10, duration: 1.2, delay: 0.3});
+    gsap.to("#hero-subtitle", {opacity: 1, y: -10, duration: 1.2, delay: 0.6});
+
+    gsap.utils.toArray('.fade-up').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+        }
+      });
+    });
+
+    ScrollTrigger.create({
+      trigger: "#content-section",
+      start: "top 95%",
+      once: true,
+      onEnter: () => {
+        document.getElementById("content-section").classList.add("revealed");
+      }
+    });
+
+    gsap.to("#timeline-line", {
+      height: "100%",
+      scrollTrigger: {
+        trigger: "#content-section",
+        start: "top center",
+        end: "bottom bottom",
+        scrub: true,
+      }
+    });
+
+        // Animate timeline images
+    gsap.utils.toArray('#content-section img').forEach((img, i) => {
+      gsap.from(img, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1.2,
+        delay: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: img,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // Animate cards from left
+    gsap.utils.toArray('.card').forEach((card) => {
+      gsap.from(card, {
+        x: -60,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 85%',
+        }
+      });
+    });
+
+    // Pulse red dots (numbers)
+    gsap.utils.toArray('.circle').forEach((dot) => {
+      gsap.from(dot, {
+        scale: 0.6,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: dot,
+          start: "top 90%"
+        }
+      });
+      gsap.to(dot, {
+        scale: 1.15,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        duration: 1.5,
+        delay: 0.5
+      });
+    });
+
+    // Glow pulse for timeline line
+    gsap.to("#timeline-line", {
+      boxShadow: "0 0 12px 4px rgba(220, 38, 38, 0.3)",
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      duration: 2,
+      delay: 1
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Minimum Age</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.26/bundled/lenis.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                  url('https://i.pinimg.com/736x/50/a6/ff/50a6ff34c320c3abc0e82d7945571a31.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    .section-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section-box:hover {
+      transform: scale(1.015);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    }
+
+    iframe {
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white bg-opacity-10 shadow z-50 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/No_symbol_red.svg/1024px-No_symbol_red.svg.png" alt="Logo" class="w-10 h-10">
+        <span class="text-xl font-bold text-red-500">Minimum Age</span>
+      </div>
+      <nav class="space-x-6 font-medium">
+        <a href="index.html" class="hover:text-red-400 transition duration-300">Home</a>
+        <a href="about.html" class="hover:text-red-400 transition duration-300">About</a>
+        <a href="article.html" class="hover:text-red-400 transition duration-300">Article</a>
+        <a href="voicebox.html" class="hover:text-red-400 transition duration-300">Voice Box</a>
+        <a href="statistics.html" class="hover:text-red-400 transition duration-300">Statistics</a>
+        <a href="improvements.html" class="hover:text-red-400 transition duration-300">Improvements</a>
+        <a href="issue.html" class="hover:text-red-400 transition duration-300">The Issue</a>
+      </nav>
+      
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-16 text-center px-6">
+    <!-- Who We Are -->
+    <section class="max-w-5xl mx-auto section-box mb-20 fade-up">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-white drop-shadow-xl">Who We Are</h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        At <span class="font-semibold text-red-400">Minimum Age, Minimum Age</span>, we advocate for the abolition of child labor as a youth-led movement to create a world where every child has the right to learn, rest, and play without condition.
+
+      </p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 mb-20 fade-up">
+      <div class="section-box text-left">
+        <h2 class="text-3xl font-bold text-red-400 mb-4">Our Mission</h2>
+        <p class="text-gray-300 leading-relaxed">
+          We strive to elevate awareness about the endangerment of rights child labor has on younger generations, empower children to proper education and livelihood, and partner with organizations, schools, and policymakers to eradicate child labor as a whole and help the cause for a better future for these children.
+        </p>
+        <p class="mt-4 italic text-yellow-300 font-medium text-lg">“Let children be children.”</p>
+      </div>
+      <div>
+        <img src="https://i.pinimg.com/736x/9d/2c/c1/9d2cc10a2b5bec1f560a8b9affd1f939.jpg" alt="Mission Image" class="rounded-lg shadow-xl w-full">
+      </div>
+    </section>
+
+    <!-- Why We Fight Section -->
+    <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 mb-20 fade-up">
+      <div>
+        <img src="https://i.pinimg.com/736x/1e/fa/f3/1efaf3ccdcb070741edabfdaa8fa0dbd.jpg" alt="Why We Fight Image" class="rounded-lg shadow-xl w-full">
+      </div>
+      <div class="section-box text-left">
+        <h2 class="text-3xl font-bold text-red-400 mb-4">Why We Fight</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Every child deserves a childhood—free from exploitation, filled with opportunity. Yet, millions are forced to sacrifice their future for survival.
+        </p>
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          We fight because child labor is not just a problem—it's a crisis of justice. It robs children of education, health, and hope. By raising our voices, we challenge the systems that enable it and build pathways to protection, education, and empowerment.
+        </p>
+        <p class="mt-4 italic text-yellow-300 font-medium text-lg">
+          “We will not stop until every child is free to dream.”
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="max-w-6xl mx-auto px-6 mb-24 fade-up">
+      <h2 class="text-4xl font-extrabold text-white mb-12 text-center drop-shadow-xl">Meet the Team</h2>
+
+      <!-- First Row: 3 Members -->
+      <div class="flex flex-col md:flex-row justify-center gap-8 mb-10">
+        <!-- Team Member 1 -->
+        <div class="section-box group relative w-full md:w-1/3 max-w-sm mx-auto text-center">
+          <a href="https://lykkography.my.canva.site/" target="_blank">
+            <img src="lykko.jpg" alt="" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-white font-medium text-sm bg-black bg-opacity-60 rounded-lg">
+              Click to Visit Lykko's Website!
+            </div>
+          </a>
+          <h3 class="text-xl font-semibold text-red-300 mt-4">Lykko Mayos</h3>
+          <p class="text-gray-300 text-sm">Project Lead</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="section-box group relative w-full md:w-1/3 max-w-sm mx-auto text-center">
+          <a href="https://hannahs101008.wixsite.com/cpar-artworks" target="_blank">
+            <img src="hannah.jpg" alt="" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-white font-medium text-sm bg-black bg-opacity-60 rounded-lg">
+              Click to Visit Hannah's Website!
+            </div>
+          </a>
+          <h3 class="text-xl font-semibold text-red-300 mt-4">Hannah Garcia</h3>
+          <p class="text-gray-300 text-sm">Project Designer</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="section-box group relative w-full md:w-1/3 max-w-sm mx-auto text-center">
+          <a href="https://zyongregg.github.io/cparmanluluartgallery.github.io/" target="_blank">
+            <img src="zyon.jpg" alt="" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-white font-medium text-sm bg-black bg-opacity-60 rounded-lg">
+              Click to Visit Zyon's Website!
+            </div>
+          </a>
+          <h3 class="text-xl font-semibold text-red-300 mt-4">Zyon Manlulu</h3>
+          <p class="text-gray-300 text-sm">Coding Director</p>
+        </div>
+      </div>
+
+      <!-- Second Row: 2 Members -->
+      <div class="flex flex-col sm:flex-row justify-center gap-8">
+        <!-- Team Member 4 -->
+        <div class="section-box group relative w-full sm:w-1/2 max-w-md mx-auto text-center">
+          <a href="https://alquezacparwebpage.my.canva.site/" target="_blank">
+            <img src="caden.jpg" alt="" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-white font-medium text-sm bg-black bg-opacity-60 rounded-lg">
+              Click to Visit Caden's Website!
+            </div>
+          </a>
+          <h3 class="text-xl font-semibold text-red-300 mt-4">Caden Alqueza</h3>
+          <p class="text-gray-300 text-sm">Project Designer</p>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="section-box group relative w-full sm:w-1/2 max-w-md mx-auto text-center">
+          <a href="https://sites.google.com/pis-qatar.com/de-vera-child-labor/home" target="_blank">
+            <img src="mj.jpg" alt="" class="w-full h-56 object-cover rounded-lg shadow-lg group-hover:opacity-80 transition duration-300">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 text-white font-medium text-sm bg-black bg-opacity-60 rounded-lg">
+              Click to Visit Michael's Website!
+            </div>
+          </a>
+          <h3 class="text-xl font-semibold text-red-300 mt-4">Michael De Vera</h3>
+          <p class="text-gray-300 text-sm">Project Designer</p>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="bg-white bg-opacity-10 border-t border-white/20 py-8 mt-12 text-white">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div>&copy; 2024 Minimum Age. All rights reserved.</div>
+      <div class="space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Instagram</a>
+        <a href="#" class="hover:text-white">Twitter</a>
+        <a href="#" class="hover:text-white">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Animation Script -->
+  <script>
+    // Smooth Scroll Init
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Fade-in on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    // Fade-out on navigation
+    document.querySelectorAll("a[href]").forEach(link => {
+      const isSameTab = link.getAttribute("target") !== "_blank" && !link.href.includes('#');
+      link.addEventListener("click", function (e) {
+        if (!isSameTab || link.href.includes('javascript')) return;
+        e.preventDefault();
+        const href = this.href;
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+
+    // Scroll-triggered fade-up animation
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.fade-up').forEach((el, i) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        delay: i * 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+        }
+      });
+    });
+  </script>
+</body>
+</html>

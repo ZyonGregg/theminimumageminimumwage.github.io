@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contemporary Philippine Arts Artworks</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img-3-1.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px); 
+  z-index: -1; 
+}
+
+.content {
+  position: relative;
+  z-index: 1; 
+}
+
+
+    .hero-section {
+      background-image: url('under_the_mango_tree.png');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-out forwards;
+      background-blur: 5px;
+    }
+
+    @keyframes fadeInHero {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-section h1 {
+      font-size: 4rem;
+      font-weight: 800; 
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-section p {
+      font-size: 1.5rem; 
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-btn {
+      padding: 12px 30px;
+      background-color: #FF7F50;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #FF6347;
+      transform: scale(1.05);
+    }
+
+h2 {
+  color: white !important; 
+  text-shadow: 1px 1px 2px black; 
+}
+
+#about .section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 800;
+  color: white; 
+  margin-top: 40px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInText 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+  text-shadow: 1px 1px 2px black; 
+}
+
+
+
+    @keyframes fadeInText {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      margin: 0 10%;
+      margin-top: 50px;
+    }
+
+    .image-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1;
+}
+
+
+.image-card:hover {
+  transform: translateY(-10px) scale(1.05); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.image-card img {
+  max-width: 45%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-card .content {
+  max-width: 45%;
+}
+
+.image-card .content h3 {
+  font-size: 2rem; 
+  font-weight: 800; 
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.image-card .content p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    footer {
+      background-color: #FF7F50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeInFooter 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeInFooter {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    footer a {
+      color: white;
+      font-weight: 500;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffebee;
+    }
+
+    #cebu {
+      background-image: url('20250505_123203.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-out forwards;
+    }
+
+    #revision {
+      background-image: url('unnamed.png');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInHero 1.5s ease-out forwards;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="hero-section fade-in">
+    <div>
+      <h1>Zyon's Contemporary Philippine Arts Artworks</h1>
+      <p>Exploring the beauty and creativity of Filipino culture through art.</p>
+      <a href="#gallery" class="cta-btn">View Artworks</a>
+       <h2 class="section-title">About This Website</h2>
+  <p class="text-lg max-w-3xl mx-auto">This website showcases the different artworks that Zyon Gregg S. Manlulu, a student from 12-STEM D, submitted in the subject of Contemporary Philippine Arts in the Region or commonly known as CPAR.</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="image-gallery fade-in">
+
+
+    <div class="image-card">
+      <div class="content">
+        <h3>A Blend of Colors</h3>
+        <p>A Blend of Colors is a poster representing the intertwining of the cultures of Filipinos working in the wonderful country of Qatar. It shows multiple cultural references such as the food products of the Philippines, and the intellectual capabilities of the Filipinos. It also showcases some of the common occupations OFWs take up in Qatar such as Teaching or a Medical Profession. It also showcases the Corniche Skyline and a Church which represents the Filipinos' devotion to religion.</p>
+      </div>
+      <img src="manlulu.zyoncpar.jpg" alt="Artwork 1" />
+    </div>
+    <div class="image-card reverse">
+      <div class="content">
+        <h3>Nestled Passion</h3>
+        <p>"Nestled Passion" is a sculpted mixed-media artwork with recycled elements used to represent us, Filipinos, protecting and embracing our melting pot of cultures that has been cultivated and enriched over the years.</p>
+        <p>How this art was made was that we started off with creating the pot’s base using scratch paper, tape, foil, and then reinforced it with air dry clay that was then painted and designed with a rope. As for the eagle, it was made from a spray bottle, scratch paper, examination folders, and plastic utensils that were then designed with. Then for the rest of the designs; scratch paper, cardboard, foam boards, paint, and glue were utilized.</p>
+        <p>Physically, the wide wings of the eagle represent a symbol of strength and guardianship. With each wing having the skewered barbecues, a beloved street food, representing Filipino hospitality, camaraderie, and the warmth of shared meals. The eagle’s powerful stance is both protective and nurturing, embracing a central pot overflowing with sampaguitas, the national flower, and stars that have the colors of the Philippine flag. These elements symbolize purity, patriotism, and the enduring spirit of the nation. At the front, the Philippine sun radiates its brilliance, presenting itself as a beacon of hope, freedom, and the unwavering passion of the Filipino people.</p>
+        <p>Looking to the side, we see the traditional straw hat worn by farmers, which represents hard work and diligence in Filipinos. Depending on whichever side this artwork is seen, it could show that our effort is what fosters our hospitality and sense of community, or it could show that behind the celebrations and festivals we hold, there is a strong sense of effort we put into our work, which gives us further reason to enjoy the days we celebrate.</p>
+        <p>Our group’s incorporation of recycled materials, sustainability, and resourcefulness reflects the creativity and kindness that define the nation. Through this fusion of cultural symbols, "Nestled Passion" aims to capture the essence of a people who cherish their traditions while embracing diversity, forging a unique identity that continues to thrive.</p>
+      </div>
+      <img src="Nestled Passion.jpg" alt="Artwork 2" />
+    </div>
+
+    <div class="image-card">
+      <div class="content">
+        <h3>Woven Miniature Bag</h3>
+        <p>The woven piece I created is inspired by woven bags, but instead of normally using strips, I wanted to use some form of rope. Woven bags are very common and used often in the provinces. Therefore, I wanted to create a woven piece which is a small representation of it. My prototype resembles a small pouch which looks like a nest since wildlife is fairly common in Cebu. The inside is lined with a cloth to avoid any objects falling through the holes in the pouch.</p>
+        <p>I used simple materials which are mainly twine rope to make the structure of the bag, while I used a piece of cloth to line the inside of the bag. These were used to mimic the traditional materials used in Cebu, which is mainly the use of threads. Using these will help us understand and value the different materials of the region. The work showcases Cebu’s traditional weaving and how Cebuanos use different materials in producing various arts and crafts.</p>
+        <p>Simply said, the woven piece I created is inspired by woven bags, but instead of normally using strips, I used some form of rope (Twine). Woven bags are very common and used often in the provinces, so I created a woven piece as a small representation of it. My prototype resembles a small pouch which looks like a nest since wildlife is fairly common in Cebu. The inside is lined with a cloth to avoid any objects falling through the holes in the pouch. The work reflects how Cebuanos are resourceful and use different materials in producing various arts and crafts.</p>
+      </div>
+      <img src="494575196_1055202523179808_1564468464472302318_n.jpg" alt="Artwork 4" />
+    </div>
+
+    <div class="image-card reverse">
+      <div class="content">
+        <h3>Minors or Miners</h3>
+        <p>The infographic highlights the serious issue of child labor, with around 160 million children worldwide forced to work in dangerous conditions. These children are often denied their basic rights, such as education and safety. Instead of going to school and playing, they work in industries like mining, agriculture, and factories, where they face harm. The infographic explains that child labor continues because of poverty, lack of education, and weak laws that don’t protect children. This cycle of poverty keeps children from escaping their situation and having a better future.</p>
+        <p>Child labor is harmful to both children and society. Children who work are deprived of their right to education, which limits their opportunities for a better life. Instead of learning, they spend their time working long hours, which affects their health and growth. These children miss out on the skills and knowledge they need to improve their lives and contribute to society. The lack of education also leads to limited job opportunities, trapping them in low-paying, unsafe work for their entire lives.</p>
+        <p>The infographic calls for action to end child labor by enforcing stronger laws and providing better access to education. Governments, organizations, and communities need to work together to protect children from exploitation and ensure they have the chance to grow up safely. By addressing the root causes of child labor, like poverty, we can give children the opportunity to learn, dream, and build a better future for themselves. Ending child labor will not only help children, but it will also strengthen communities and create a brighter future for everyone.</p>
+      </div>
+      <img src="minors or miners.jpg" alt="Artwork 3" />
+    </div>
+
+  </section>
+
+<section id="revision" class="text-center py-20 px-4 fade-in">
+  <h2 class="section-title">Artist Revision of Maman</h2>
+  <p class="text-lg max-w-3xl mx-auto text-outline">Honestly, I believe that the artwork is near perfect. But if I were to make my own improvements, I would like to add more designs like a metal landscape. Having a metal landscape would add more meaning and probably a more interactive environment around the piece. In terms of materials, I feel like metals are still the best and most suitable for the design. I also want to make it look like Maman is tripping since it showcases that mothers are not perfect, but are willing to continue for her children.</p>
+</section>
+
+<section id="cebu" class="text-center py-20 px-4 fade-in">
+  <h2 class="section-title">Cebu Exhibit</h2>
+  <p class="text-lg max-w-3xl mx-auto text-outline">The Cebu Exhibit celebrates Cebu’s rich culture, featuring traditional crafts and arts inspired by important symbols like Lapu-Lapu, one of the unofficial national heroes of the Philippines, and the Butanding or whale shark, an iconic creature of Cebu. The exhibit also showcases the Bolo, a tool symbolizing the strength of the Cebuano people. The colors of Cebu Pacific are used to represent the island’s modern spirit and connections to the world. This exhibit showcases the creativity, resourcefulness, and deep cultural pride of Cebuanos, blending the island’s history with its future.</p>
+</section>
+
+<style>
+  .text-outline {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), -2px -2px 4px rgba(0, 0, 0, 0.7); 
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    font-weight: 800;
+    color: #2E2E2E;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+</style>
+<section id="reflection" class="text-center py-20 px-4 fade-in">
+  <h2 class="section-title">Reflection</h2>
+<p class="text-lg max-w-3xl mx-auto text-white text-outline">Throughout my entire CPAR journey, I have learned the beauty of the arts. From the culture and traditions of OFWs to the different cultural materials used in the provinces, I have experienced creating and defining art. This is an experience that I may not fully enjoy in my academic life in college, but I will always appreciate the beauty and significance of the art forms in the Philippines. I am grateful for learning these wonderful topics, and I have been able to apply them in my life.</p>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Contemporary Philippine Arts Manlulu. All Rights Reserved.</p>
+    <div class="space-x-4 mt-4">
+    </div>
+  </footer>
+
+</body>
+
+</html>
