@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimum Age, Minimum Wage</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- AOS Scroll Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url('https://i.pinimg.com/736x/90/32/66/903266121c3674ce428c780e6edd5dcf.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #f3f3f3;
+      opacity: 0;
+      overflow-x: hidden;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .skip-btn {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      opacity: 0;
+      padding: 0.5rem 1.5rem;
+      border: 2px solid white;
+      color: white;
+      background-color: transparent;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: all 0.5s ease, opacity 1s ease;
+      animation: pulse 2s infinite;
+      z-index: 50;
+    }
+
+    .skip-btn.visible {
+      opacity: 1;
+    }
+
+    .skip-btn:hover {
+      background-color: white;
+      color: black;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    /* Intro fade-out animation */
+    #intro.fade-out {
+      animation: fadeOut 1s forwards ease-in-out;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.05); pointer-events: none; }
+    }
+
+    #titleReveal img {
+      animation: logoPop 1.2s ease-in-out forwards;
+      transform: scale(0.7);
+      opacity: 0;
+    }
+
+    @keyframes logoPop {
+      0% { transform: scale(0.7); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #mainContent.fade-in-extra {
+      animation: fadeInMain 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInMain {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .zoom-in {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: zoomIn 1s ease-out forwards;
+    }
+
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 15px rgba(255, 99, 99, 0.8), 0 0 5px rgba(255, 0, 0, 0.5);
+      transform: scale(1.05);
+    }
+
+    .text-glow {
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Make Hero Image responsive */
+    .hero-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    /* Mobile-friendly tweaks for text */
+    .hero-text {
+      font-size: 1.5rem;
+      line-height: 1.75;
+    }
+
+    /* Navbar fix for mobile */
+    @media (max-width: 768px) {
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+  <!-- 🔥 Intro Section -->
+  <div id="intro" class="fixed inset-0 bg-black flex items-center justify-center flex-col z-50 overflow-hidden">
+    <video id="introVideo" class="absolute inset-0 w-full h-full object-cover" autoplay muted playsinline>
+      <source src="emtech intro2 .mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="titleReveal" class="opacity-0 text-center z-10">
+      <img src="Brown bg w_ Text.png" alt="Minimum Age Logo" class="mx-auto mb-8" style="width: 90vw; max-width: 800px;">
+    </div>
+  </div>
+
+  <!-- 🌍 Main Site Content -->
+  <div id="mainContent" class="opacity-0 transition-opacity duration-1000">
+
+    <!-- Navbar -->
+    <header class="fixed w-full bg-white bg-opacity-10 backdrop-blur-md shadow z-50 text-white">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-red-500">Minimum Age, Minimum Wage</div>
+        <nav class="space-x-6 font-medium navbar">
+          <a href="index.html" class="hover:text-red-400 transition duration-300">Home</a>
+          <a href="about.html" class="hover:text-red-400 transition duration-300">About</a>
+          <a href="article.html" class="hover:text-red-400 transition duration-300">Article</a>
+          <a href="voicebox.html" class="hover:text-red-400 transition duration-300">Voice Box</a>
+          <a href="statistics.html" class="hover:text-red-400 transition duration-300">Statistics</a>
+          <a href="improvements.html" class="hover:text-red-400 transition duration-300">Improvements</a>
+          <a href="issue.html" class="hover:text-red-400 transition duration-300">The Issue</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
+      <div class="flex flex-col-reverse md:flex-row items-center">
+        <div class="w-full md:w-1/2 hero-text">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-xl text-glow">
+            Let Children Be Children.
+          </h1>
+          <p class="text-lg text-white mb-6">
+            Every child deserves a safe childhood and a promise of a better future. Yet, nearly 1 in 10 children around the world are trapped in child labour, forced to make sacrifices when they shouldn’t have. As of early 2020, an estimated 160 million children were engaged in child labour & nearly half in hazardous work that threatens their overall well-being.
+            Driven by poverty and hardships, many children are pushed into work at an early age, often under dangerous and exploitative conditions. Children in need are especially vulnerable, with some trafficked across borders or recruited by armed groups. This global crisis continues to take children’s rights.
+          </p>
+          <a href="voicebox.html" class="inline-block bg-red-600 text-white px-6 py-3 rounded shadow hover:bg-red-700 transition btn-glow">
+            Take Action
+          </a>
+        </div>
+
+        <div class="w-full md:w-1/2 mb-8 md:mb-0">
+          <img src="https://i.pinimg.com/474x/69/f1/04/69f1040f360511bb6744177ee54287b2.jpg" alt="Hero Image" class="rounded-lg shadow-lg zoom-in hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" data-aos="fade-up">
+      <div class="bg-white bg-opacity-5 backdrop-blur-md p-10 rounded-xl shadow-md">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-red-400 text-center mb-12 text-glow">Our Mission</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">
+            <h3 class="text-xl font-semibold text-white mb-2">Educate</h3>
+            <p class="text-gray-300">We aim to spread further awareness about the threat of child labor across the globe.</p>
+          </div>
+          <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="text-xl font-semibold text-white mb-2">Empower</h3>
+            <p class="text-gray-300">We aim to support efforts that give children a chance to experience a livelihood with education, and development under protection.</p>
+          </div>
+          <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl shadow hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="300">
+            <h3 class="text-xl font-semibold text-white mb-2">Eradicate</h3>
+            <p class="text-gray-300">We aim to bring child labor to an end through collaboration with willing third parties.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto" data-aos="fade-up">
+      <div class="bg-white bg-opacity-5 backdrop-blur-md p-10 rounded-xl shadow-md text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-red-400 mb-6 text-glow">Watch Our Message</h2>
+        <p class="text-gray-300 mb-6">This short documentary shines light on the lives affected by child labor and how you can help.</p>
+        <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg zoom-in">
+<iframe
+  class="w-full h-96 rounded"
+  src="https://www.youtube.com/embed/LaUhBF83Ha8"
+  frameborder="0"
+  allowfullscreen
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white bg-opacity-10 backdrop-blur-sm border-t border-white/20 py-8 mt-12 text-white">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+        <div>&copy; 2024 Minimum Age. All rights reserved.</div>
+        <div class="space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">Twitter</a>
+          <a href="#" class="hover:text-white">Facebook</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const intro = document.getElementById("intro");
+    const video = document.getElementById("introVideo");
+    const titleReveal = document.getElementById("titleReveal");
+    const main = document.getElementById("mainContent");
+  
+    function finishIntro() {
+      intro.classList.add("fade-out");
+      setTimeout(() => {
+        intro.style.display = "none";
+        main.classList.remove("opacity-0");
+        main.classList.add("fade-in-extra");
+      }, 1000);
+    }
+  
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+  
+      let timeoutFallback = setTimeout(() => {
+        console.warn("Fallback triggered: video missing or too long to load.");
+        finishIntro();
+      }, 7000); // force skip after 7 seconds if nothing happens
+  
+      if (video) {
+        video.addEventListener('loadedmetadata', () => {
+          clearTimeout(timeoutFallback);
+  
+          const duration = video.duration;
+          setTimeout(() => {
+            video.style.transition = "opacity 1s ease-out";
+            video.style.opacity = "0.3";
+            titleReveal.classList.remove("opacity-0");
+            titleReveal.classList.add("fade-in-extra");
+  
+            setTimeout(finishIntro, 4000); // 4 seconds after logo reveal
+          }, (duration - 0.5) * 1000);
+        });
+  
+        video.addEventListener('error', () => {
+          console.warn("Video failed to load.");
+          clearTimeout(timeoutFallback);
+          finishIntro();
+        });
+      } else {
+        finishIntro();
+      }
+    });
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
